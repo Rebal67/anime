@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.germany,hambourg,port-on-elbe-:-port-crane-1-hex { color: #5327F2; }
+.germany,hambourg,port-on-elbe-:-port-crane-2-hex { color: #0511F2; }
+.germany,hambourg,port-on-elbe-:-port-crane-3-hex { color: #030BA6; }
+.germany,hambourg,port-on-elbe-:-port-crane-4-hex { color: #020873; }
+.germany,hambourg,port-on-elbe-:-port-crane-5-hex { color: #010440; }
+
+/* Color Theme Swatches in RGBA */
+.germany,hambourg,port-on-elbe-:-port-crane-1-rgba { color: rgba(82, 38, 242, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-2-rgba { color: rgba(4, 16, 242, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-3-rgba { color: rgba(3, 11, 165, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-4-rgba { color: rgba(2, 7, 114, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-5-rgba { color: rgba(1, 4, 63, 1); }
+
+/* Color Theme Swatches in HSLA */
+.germany,hambourg,port-on-elbe-:-port-crane-1-hsla { color: hsla(253, 88, 55, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-2-hsla { color: hsla(236, 96, 48, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-3-hsla { color: hsla(236, 96, 33, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-4-hsla { color: hsla(236, 96, 22, 1); }
+.germany,hambourg,port-on-elbe-:-port-crane-5-hsla { color: hsla(236, 96, 12, 1); }
