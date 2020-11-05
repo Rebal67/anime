@@ -1,17 +1,31 @@
 <?php
-class User
+class User extends BaseModel
 {
-  private $database;
+
+
+  // private $database;
   public function __construct()
   {
-    $this->database = new Database;
+    parent::__construct();
+    $this->pk = 'userid';
+    $this->table = 'users';
+    $this->columns = [
+      'firstname' => '',
+      'email' => '',
+      'userid' => '',
+      'password' => '',
+      'salt' => '',
+      'level' => ''
+    ];
+  
+
   }
 
 
   // Find user by email
   public function checkUserExists($email)
   {
-    $query = "SELECT * ";
+    $query = "SELECT email ";
     $query .= "FROM users ";
     $query .= "WHERE email = :email";
     $this->database->prepare($query);
@@ -27,11 +41,13 @@ class User
   // Register user
   public function register($data)
   {
-    $query = "INSERT INTO users (name, email, password) ";
-    $query .= "VALUES(:name, :email, :password)";
+    $query = "INSERT INTO users (firstname,lastname, email, password,salt,level) ";
+    $query .= "VALUES(:name,:lastname, :email, :password,:salt,0)";
     $this->database->prepare($query);
     $this->database->bind(":name", $data['name']);
     $this->database->bind(":email", $data['email']);
+    $this->database->bind(":lastname", $data['last_name']);
+    $this->database->bind(":salt", $data['salt']);
     $this->database->bind(":password", $data['password']);
     if ($this->database->execute()) {
       return true;

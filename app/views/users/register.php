@@ -5,9 +5,9 @@
       <h2>Registreren</h2>
       <p>Vul aub dit formulier in om te registreren</p>
       <form action="<?php echo URLROOT; ?>/users/register" method="POST">
-        <div class="row">
+        <div class="form-row">
 
-          <div class="form-group col">
+          <div class="form-group col-md-6">
             <label for="name">Voornaam <sup>*</sup></label>
             <input type="text" name="name" class="form-control form-control-lg
             <?php echo (!empty($data['name_error'])) ? "is-invalid" : ""; ?>" value="<?php echo $data['name']; ?>">
@@ -15,7 +15,7 @@
             </span>
           </div>
 
-          <div class="form-group col">
+          <div class="form-group col-md-6">
             <label for="last_name">Achternaam <sup>*</sup></label>
             <input type="text" name="last_name" class="form-control form-control-lg
             <?php echo (!empty($data['last_name_error'])) ? "is-invalid" : ""; ?>" value="<?php echo $data['last_name']; ?>">
