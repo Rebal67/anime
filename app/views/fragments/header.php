@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="En">
 
 <head>
   <!-- Basic -->
