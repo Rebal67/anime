@@ -1,4 +1,4 @@
-<?php require APPROOT . "/views/fragments/header.php"; ?>
+<?php $styles = []; require APPROOT . "/views/fragments/header.php"; ?>
 <div class="row">
   <div class="col-md-6 mx-auto">
     <div class="card card-body bg-light mt-5">

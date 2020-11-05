@@ -21,7 +21,6 @@
 
         <div class="row">
           <div class="col">
-            DICTAAT 12 BACKEND PROGRAMMEREN Vincent Hooft
             <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">Geen account? </a>
           </div>
           <div class="col">
