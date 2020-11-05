@@ -5,17 +5,18 @@
       <h2>Register</h2>
       <p>Please fill out this form to register</p>
       <form action="<?php echo URLROOT; ?>/users/register" method="POST">
-        <div class="row">
+        <div class="form-row">
 
-          <div class="form-group col">
+          <div class="form-group col-md-6">
             <label for="name">First Name <sup>*</sup></label>
+    
             <input type="text" name="name" class="form-control form-control-lg
             <?php echo (!empty($data['name_error'])) ? "is-invalid" : ""; ?>" value="<?php echo $data['name']; ?>">
             <span class="invalid-feedback"><?php echo $data['name_error']; ?>
             </span>
           </div>
 
-          <div class="form-group col">
+          <div class="form-group col-md-6">
             <label for="last_name">Last name <sup>*</sup></label>
             <input type="text" name="last_name" class="form-control form-control-lg
             <?php echo (!empty($data['last_name_error'])) ? "is-invalid" : ""; ?>" value="<?php echo $data['last_name']; ?>">

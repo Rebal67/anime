@@ -80,12 +80,15 @@ class Users extends Controller
 
       // Check of no errors have been found
       if ((empty($data['name_error'])) &&
+        (empty($data['last_name_error'])) &&
         (empty($data['email_error'])) &&
         (empty($data['password_error'])) &&
         (empty($data['confirmpassword_error']))
       ) {
         // Encrypt password
-        $data['password'] = encrypt($data['password']);
+        $salt = generateRandomString(25);
+        $data['salt'] = $salt;
+        $data['password'] = password_hash($data['password'].$salt,PASSWORD_DEFAULT);
         // Register user
         if ($this->userModel->register($data)) {
           flash(
@@ -127,28 +130,34 @@ class Users extends Controller
       $data = [
         "email" => trim($_POST['email']),
         "password" => trim($_POST['password']),
-        "name_error" => "",
         "email_error" => "",
         "password_error" => "",
-        "confirmpassword_error" => ""
+
       ];
+      if(empty($data['email'])) $data['email_error'] = "email is required";
+      if(empty($data['password'])) $data['password_error'] = "password is required";
       // Check of errors have been found
       if ((empty($data['email_error'])) &&
         (empty($data['password_error']))
       ) {
         // Encrypt password
-        $data['password'] = encrypt($data['password']);
+        $user = $this->userModel->readFirst([
+          'where email = :email',
+          ['email' => $data['email']]
+        ]);
+  
+        $loggedInUser = password_verify($data['password'].$user->salt,$user->password);
         // Check and set logged in user
         // When okay, the row is returned, otherwise false
-        $loggedInUser = $this->userModel->login(
-          $data["email"],
-          $data["password"]
-        );
+        // $loggedInUser = $this->userModel->login(
+        //   $data["email"],
+        //   $data["password"]
+        // );
         if ($loggedInUser) {
           // Login okay, store in session
-          $_SESSION["userid"] = $loggedInUser->id;
-          $_SESSION["useremail"] = $loggedInUser->email;
-          $_SESSION["username"] = $loggedInUser->name;
+          $_SESSION["userid"] = $user->userid;
+          $_SESSION["useremail"] = $user->email;
+          $_SESSION["username"] = $user->name;
           redirect("pages/index");
         } else {
           $data["email_error"] =

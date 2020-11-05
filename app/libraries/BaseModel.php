@@ -9,7 +9,7 @@ class BaseModel
   protected $pk; // primary key
   protected $columns = []; // table columns 
   protected $table;
-  private $database; // database connection 
+  protected $database; // database connection 
 
   public function __construct()
   {
@@ -42,7 +42,7 @@ class BaseModel
 
 
 
-  public function readOne($arr = [])
+  public function readFirst($arr = [])
   {
     $query =  "select " . implode(',', array_keys($this->columns)) . " from " . $this->table . " ";
 
@@ -72,6 +72,37 @@ class BaseModel
     }
   }
 
+
+  public function readOne($arr = [])
+  {
+    $query =  "select " . implode(',', array_keys($this->columns)) . " from " . $this->table . " ";
+    $query .= "WHERE ".$this->pk." = :pk";
+    if ($arr) {
+      $query .=  $arr[0];
+      $this->database->prepare($query);
+      $this->database->bind('pk',$this->columns[$this->pk]);
+      if (isset($arr[1])) {
+        foreach ($arr[1] as $paraName => $value) {
+          $this->database->bind($paraName, $value);
+        }
+      }
+    } else {
+      $this->database->prepare($query);
+    }
+
+    $row =  $this->database->getRow();
+    if ($row) {
+      $pk = $this->pk;
+
+      foreach($row as $key=>$value){
+        $this->columns[$key] = $value;
+      } 
+
+      return $row;
+    } else {
+      return false;
+    }
+  }
 
   public function delete()
   {
