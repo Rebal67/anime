@@ -61,7 +61,7 @@ class Database
 
   // Get results in an array
   public function getArray()
-  {
+  { 
     $this->execute();
     return $this->statementHandler->fetchAll(PDO::FETCH_OBJ);
   }

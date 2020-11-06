@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark   mb-3">
+<nav class="navbar navbar-expand-md navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo URLROOT; ?>">
     <img src="<?php echo URLROOT; ?>/images/Templogo.png">
