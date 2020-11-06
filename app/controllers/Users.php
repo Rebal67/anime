@@ -158,6 +158,7 @@ class Users extends Controller
           $_SESSION["userid"] = $user->userid;
           $_SESSION["useremail"] = $user->email;
           $_SESSION["username"] = $user->name;
+          $_SESSION['level'] = $user->level;
           redirect("pages/index");
         } else {
           $data["email_error"] =

@@ -21,6 +21,19 @@
             About
           </a>
         </li>
+
+
+        <?php if (isset($_SESSION['level']) && $_SESSION['level'] > 0): ?>
+
+
+          <li class="nav-item">
+
+          <a class="nav-link" href="<?php echo URLROOT; ?>/admin/">
+            CMS
+          </a>
+        </li>
+
+        <?php endif; ?>
       </ul>
       <ul class="navbar-nav ml-auto">
         <?php if (isset($_SESSION["userid"])) : ?>

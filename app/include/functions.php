@@ -50,3 +50,14 @@ function authenticated(){
     redirect('users/login');
   }
 }
+
+function isAdmin(){
+  if(!$_SESSION['userid'] > 1){
+    redirect('users/login');
+  }
+}
+function isModerator(){
+  if(!$_SESSION['userid'] > 0){
+    redirect('users/login');
+  }
+}

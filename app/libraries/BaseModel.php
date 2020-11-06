@@ -48,10 +48,11 @@ class BaseModel
 
     if ($arr) {
       $query .=  $arr[0];
+      $query .= " limit 1";
       $this->database->prepare($query);
       if (isset($arr[1])) {
         foreach ($arr[1] as $paraName => $value) {
-          $this->database->bind($paraName, $value);
+          $this->database->bind(":$paraName", $value);
         }
       }
     } else {
@@ -80,10 +81,10 @@ class BaseModel
     if ($arr) {
       $query .=  $arr[0];
       $this->database->prepare($query);
-      $this->database->bind('pk',$this->columns[$this->pk]);
+      $this->database->bind(':pk',$this->columns[$this->pk]);
       if (isset($arr[1])) {
         foreach ($arr[1] as $paraName => $value) {
-          $this->database->bind($paraName, $value);
+          $this->database->bind(":$paraName", $value);
         }
       }
     } else {
@@ -111,7 +112,7 @@ class BaseModel
       $query .= "WHERE " . $this->pk . ' = :pk limit 1';
 
       $this->database->prepare($query);
-      $this->database->bind('pk', $this->columns[$this->pk]);
+      $this->database->bind(':pk', $this->columns[$this->pk]);
       return $this->database->execute();
     } else {
       echo $this->pk . " is empty";
@@ -158,7 +159,7 @@ class BaseModel
     foreach ($this->columns as $key => $value) {
       $this->database->bind(":$key", $value);
     }
-    $this->database->bind('pk', $this->columns[$this->pk]);
+    $this->database->bind(':pk', $this->columns[$this->pk]);
     return $this->database->execute();
   }
 }
