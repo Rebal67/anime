@@ -23,14 +23,14 @@ class Core {
 
     if(isset($url[1])){
       $param=strtolower($url[1]);
-      if(method_exists($this->currentController,$param)){
+      if(method_exists($this->currentController,$param."Action")){
         $this->currentMethod = $param;
         unset($url[1]);
       }
     }
     $this->params = $url ? array_values($url) : [];
     call_user_func_array([$this->currentController,
-                          $this->currentMethod],
+                          $this->currentMethod."Action"],
                           $this->params);
 
   }

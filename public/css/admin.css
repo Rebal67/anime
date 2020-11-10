@@ -1,0 +1,22 @@
+body{
+ 
+
+}
+main{
+  color:white;
+  flex: 1;
+  padding: 1rem;
+  background: url("/images/background.jpg") no-repeat;
+  background-size: cover;
+  /* width: 80%; */
+}
+.editor{
+  color:black;
+}
+input{
+  background-color: grey;
+}
+.form{
+  width: 80%;
+  margin: 0 auto;
+}

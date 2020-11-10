@@ -10,7 +10,7 @@ class Users extends Controller
   // Called for loading and post requests
   // Called for register flow,
   // GET=prepare and POST=process data
-  public function register()
+  public function registerAction()
   {
     // Check for POST
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
@@ -107,7 +107,7 @@ class Users extends Controller
   }
 
   // Handle login
-  public function login()
+  public function loginAction()
   {
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
@@ -174,7 +174,7 @@ class Users extends Controller
     }
   }
   // Handle logout
-  public function logout()
+  public function logoutAction()
   {
     unset($_SESSION["userid"]);
     unset($_SESSION["useremail"]);

@@ -10,6 +10,7 @@
   <?php foreach  ($styles as $style ):?>
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/<?=$style?>.css">
   <?php endforeach; ?>
+  <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
   <title><?php echo SITENAME; ?></title>
 </head>
 

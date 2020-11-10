@@ -7,7 +7,7 @@ class Pages extends Controller
 {
 
 
-  public function index()
+  public function indexAction()
   {
 
     // var_dump($ffMpeg );
