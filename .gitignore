@@ -466,9 +466,3 @@ composer.lock
 # Recommended template: PHP.gitignore
 
 /wpcs/*
-
-##### SASS
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map

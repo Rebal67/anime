@@ -1,5 +1,10 @@
 {
-    "require": {
-        "php-ffmpeg/php-ffmpeg": "^0.16.0"
-    }
+    "name": "rebal/anime",
+    "authors": [
+        {
+            "name": "rebal67",
+            "email": "45282854+Rebal67@users.noreply.github.com"
+        }
+    ],
+    "require": {}
 }
