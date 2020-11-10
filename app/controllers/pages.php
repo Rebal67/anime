@@ -9,11 +9,8 @@ class Pages extends Controller
 
   public function index()
   {
-    // $this->bikesModel = $this->model("Bikes");
-    // // Minimal radius
-    // $minimalRadius = 80;
-    // // Read matching bikesfrom the database
-    // $bikes = $this->bikesModel->getMinimalRadius($minimalRadius);
+
+    // var_dump($ffMpeg );
     $data = [
       "title" => "Welcome",
       "context" => 'bla bla bla'

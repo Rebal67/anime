@@ -10,12 +10,14 @@ class User extends BaseModel
     $this->pk = 'userid';
     $this->table = 'users';
     $this->columns = [
-      'firstname' => '',
+      'first_name' => '',
+      'last_name' => '',
       'email' => '',
       'userid' => '',
       'password' => '',
       'salt' => '',
-      'level' => ''
+      'level' => '',
+      'ip'=>''
     ];
   
 
@@ -41,14 +43,16 @@ class User extends BaseModel
   // Register user
   public function register($data)
   {
-    $query = "INSERT INTO users (firstname,lastname, email, password,salt,level) ";
-    $query .= "VALUES(:name,:lastname, :email, :password,:salt,0)";
+    $ip = getUserIP();
+    $query = "INSERT INTO users (first_name,last_name, email, password,salt,level,ip) ";
+    $query .= "VALUES(:name,:lastname, :email, :password,:salt,0,:ip)";
     $this->database->prepare($query);
     $this->database->bind(":name", $data['name']);
     $this->database->bind(":email", $data['email']);
     $this->database->bind(":lastname", $data['last_name']);
     $this->database->bind(":salt", $data['salt']);
     $this->database->bind(":password", $data['password']);
+    $this->database->bind(":ip",$ip);
     if ($this->database->execute()) {
       return true;
     } else {
