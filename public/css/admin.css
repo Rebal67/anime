@@ -1,17 +1,25 @@
-body{
- 
-
+.placeholder{
+  
+  width: 300px;
+  height: 400px;
 }
+
 main{
-  color:white;
+  /* color:white; */
   flex: 1;
   padding: 1rem;
-  background: url("/images/background.jpg") no-repeat;
+  background: #e0dfdf no-repeat;
   background-size: cover;
   /* width: 80%; */
 }
+.side-nav ul li{
+  min-width: 200px;
+}
 .editor{
   color:black;
+}
+.editor #editor{
+  min-height: 30vh;
 }
 input{
   background-color: grey;
