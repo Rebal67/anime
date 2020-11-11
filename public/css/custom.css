@@ -53,10 +53,9 @@ header{
   float: center;
 } */
 
-/* .carousel-item img{
-  width: 50%!important;
-  margin: auto;
-} */
+.carousel-item img{
+border-radius: 20px;
+}
 
 #carouselExampleCaptions{
   position: absolute;
@@ -66,11 +65,8 @@ header{
   width: 60% !important;
   margin: 0 auto;
   transform: translate(-50%,50%);
-
+  border-radius: 20px;
 }
-
-
-
 
 .carouselExampleCaptions{
   width: 50%!important;
