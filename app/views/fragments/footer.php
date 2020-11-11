@@ -12,7 +12,7 @@
   <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 
   <?php if(!isset($js)) $js = [];  foreach  ($js as $style ):?>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/js/<?=$style?>.js">
+  <script  src="<?php echo URLROOT; ?>/js/<?=$style?>.js"> </script>
   <?php endforeach; ?>
   </body>
 
