@@ -14,14 +14,14 @@ include APPROOT . "/views/fragments/header.php"; ?>
         <div class="col">
           <div class="form-row">
             <div class="form-group col">
-              <label for="">name</label>
+              <label for="">Name</label>
               <input type="text" name="name" id="" class="form-control" placeholder="name" aria-describedby="helpId">
               <!-- <small id="helpId" class="text-muted"></small> -->
             </div>
 
             <div class="form-group col">
-              <label for="">rating</label>
-              <input type="number" name="" max="5" id="" class="form-control" placeholder="rating">
+              <label for="">Rating</label>
+              <input type="number" name="rating" max="5" id="" class="form-control" placeholder="rating">
             </div>
 
 
@@ -50,7 +50,16 @@ include APPROOT . "/views/fragments/header.php"; ?>
         </div>
         </div>
 
-        <img class="placeholder" src="/images/thumbnail-placeholder.png" alt="">
+        <div>
+          <img class="placeholder" src="/images/thumbnail-placeholder.png" id="thumbnail" alt="">
+          <div>
+            <label class="btn btn-secondary" type="button" for="name" >
+              Upload thumbnail
+            <input type="file" id="name" name="file" onchange="changeThumbnail(event,'thumbnail')" style="display:none">
+            </label>
+          </div>
+          
+        </div>
 
         
       </div>

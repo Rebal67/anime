@@ -1,7 +1,9 @@
 .placeholder{
+  
   width: 300px;
   height: 400px;
 }
+
 main{
   /* color:white; */
   flex: 1;
