@@ -69,7 +69,7 @@ class BaseModel
 
       return $row;
     } else {
-      echo 'couldnt find result';
+      return false;
     }
   }
 
@@ -115,7 +115,7 @@ class BaseModel
       $this->database->bind(':pk', $this->columns[$this->pk]);
       return $this->database->execute();
     } else {
-      echo $this->pk . " is empty";
+      return false;
     }
   }
 

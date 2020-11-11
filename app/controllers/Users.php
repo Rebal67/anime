@@ -145,6 +145,14 @@ class Users extends Controller
           'where email = :email',
           ['email' => $data['email']]
         ]);
+        if(!$user){
+          $data["email_error"] =
+            "Email/wachtwoord combinatie is niet correct";
+          $data["password_error"] =
+            "Email/wachtwoord combinatie is niet correct";
+          $this->view("users/login", $data);
+          exit;
+        }
   
         $loggedInUser = password_verify($data['password'].$user->salt,$user->password);
         // Check and set logged in user
