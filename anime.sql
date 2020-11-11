@@ -1,32 +1,48 @@
 CREATE TABLE `users` (
   `userid` int PRIMARY KEY AUTO_INCREMENT,
   `email` varchar(255) UNIQUE,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
   `salt` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `level` int
+  `level` int DEFAULT 0,
+  `ip` varchar(255),
+  `created_date` timestamp DEFAULT (now())
 );
 
 CREATE TABLE `series` (
+  `thumbnail` varchar(255),
   `serieid` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `year` year,
+  `created_date` timestamp DEFAULT (now()),
+  `status` varhcar(255),
+  `rating` int
 );
 
 CREATE TABLE `seasons` (
-  `seasonid` int PRIMARY KEY AUTO_INCREMENT,
+  `thumbnail` varchar(255),
   `number` int,
-  `serieid` int
+  `serieid` int,
+  PRIMARY KEY (`number`, `serieid`)
 );
 
 CREATE TABLE `films` (
+  `thumbnail` varchar(255),
   `filmid` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
+  `description` text,
   `serieid` int,
-  `seasonid` int,
+  `season_number` int,
   `episode` int,
   `video` varchar(255),
-  `rating` int
+  `rating` int,
+  `views` int,
+  `year` year,
+  `created_date` timestamp DEFAULT (now()),
+  `live` boolean,
+  `type` status
 );
 
 CREATE TABLE `catogeries` (
@@ -43,14 +59,16 @@ CREATE TABLE `user_film` (
   `userid` int,
   `filmid` int,
   `watched` boolean,
-  `rating` int
+  `rating` int,
+  `watch_later` boolean,
+  `favorite` boolean
 );
 
 ALTER TABLE `seasons` ADD FOREIGN KEY (`serieid`) REFERENCES `series` (`serieid`);
 
 ALTER TABLE `films` ADD FOREIGN KEY (`serieid`) REFERENCES `series` (`serieid`);
 
-ALTER TABLE `films` ADD FOREIGN KEY (`seasonid`) REFERENCES `seasons` (`seasonid`);
+ALTER TABLE `films` ADD FOREIGN KEY (`season_number`) REFERENCES `seasons` (`number`);
 
 ALTER TABLE `film_categories` ADD FOREIGN KEY (`categoryid`) REFERENCES `catogeries` (`categoryid`);
 
@@ -59,3 +77,8 @@ ALTER TABLE `film_categories` ADD FOREIGN KEY (`filmid`) REFERENCES `films` (`fi
 ALTER TABLE `user_film` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
 
 ALTER TABLE `user_film` ADD FOREIGN KEY (`filmid`) REFERENCES `films` (`filmid`);
+
+ALTER TABLE `user_film` ADD FOREIGN KEY (`rating`) REFERENCES `user_film` (`filmid`);
+
+ALTER TABLE `users` ADD FOREIGN KEY (`ip`) REFERENCES `users` (`created_date`);
+

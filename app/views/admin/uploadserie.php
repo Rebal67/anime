@@ -21,9 +21,9 @@
         <input type="number" name="" max="5" id="" class="form-control" placeholder="rating">
       </div>
     </div>
-
+    <h2>Description</h2>
     <div class="editor">
-    <div id="editor"></div>
+    <textarea id="editor"></textarea>
     </div>
  
 
