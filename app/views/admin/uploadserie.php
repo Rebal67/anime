@@ -5,19 +5,19 @@
   
 
 
-  <h1 class="text-center">create serie</h1>
+  <h1 class="text-center">Create serie</h1>
 
 
 <form class="form" validation>
     <div class="form-row">
       <div class="form-group col">
-        <label for="">name</label>
+        <label for="">Name</label>
         <input type="text" name="name" id="" class="form-control" placeholder="name" aria-describedby="helpId">
         <!-- <small id="helpId" class="text-muted"></small> -->
       </div>
       
       <div class="form-group col">
-        <label for="">rating</label>
+        <label for="">Rating</label>
         <input type="number" name="" max="5" id="" class="form-control" placeholder="rating">
       </div>
     </div>

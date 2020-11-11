@@ -5,19 +5,19 @@
   
 
 
-  <h1 class="text-center">upload</h1>
+  <h1 class="text-center">Upload</h1>
 
 
 <div class="form">
     <div class="form-row">
       <div class="form-group col">
-        <label for="">name</label>
+        <label for="">Name</label>
         <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
         <!-- <small id="helpId" class="text-muted"></small> -->
       </div>
       
       <div class="form-group col">
-        <label for="">rating</label>
+        <label for="">Rating</label>
         <input type="number" name="" id="" class="form-control" placeholder="">
       </div>
     </div>

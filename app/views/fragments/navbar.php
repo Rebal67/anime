@@ -15,14 +15,6 @@
           </a>
         </li>
 
-        <li class="nav-item">
-
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">
-            About
-          </a>
-        </li>
-
-
         <?php if (isset($_SESSION['level']) && $_SESSION['level'] > 0): ?>
 
 
@@ -57,3 +49,7 @@
     </div>
   </div>
 </nav>
+
+
+
+
