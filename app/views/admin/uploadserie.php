@@ -5,8 +5,8 @@ include APPROOT . "/views/fragments/header.php"; ?>
   <main>
 
 
+  <h1 class="text-center">Create serie</h1>
 
-    <h1 class="text-center">create serie</h1>
 
 
     <form class="form" validation>

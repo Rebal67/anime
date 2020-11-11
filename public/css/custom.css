@@ -12,6 +12,7 @@ html,body{
   background-color: var(--primary) !important; 
 }
 header{
+  position: relative;
   color: white;
   background-color: var(--primary);
   padding: 1rem;
@@ -41,4 +42,37 @@ header{
 
 .navbar-dark .navbar-nav .nav-link {
   color: white !important;
+}
+
+/* 
+.img1 {
+  transform: translate(-50%,-25%);
+  margin: auto;
+  width:10rem ;
+  height:15rem ;
+  float: center;
+} */
+
+/* .carousel-item img{
+  width: 50%!important;
+  margin: auto;
+} */
+
+#carouselExampleCaptions{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 60% !important;
+  margin: 0 auto;
+  transform: translate(-50%,50%);
+
+}
+
+
+
+
+.carouselExampleCaptions{
+  width: 50%!important;
+  margin: auto;
 }
