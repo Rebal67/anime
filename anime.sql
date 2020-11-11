@@ -6,8 +6,8 @@ CREATE TABLE `users` (
   `salt` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` int DEFAULT 0,
-  `ip` varchar(255),
-  `created_date` timestamp DEFAULT (now())
+  `ip` varchar(255) NOT NULL,
+  `created_date` timestamp DEFAULT now()
 );
 
 CREATE TABLE `series` (
@@ -16,8 +16,8 @@ CREATE TABLE `series` (
   `name` varchar(255) NOT NULL,
   `description` text,
   `year` year,
-  `created_date` timestamp DEFAULT (now()),
-  `status` varhcar(255),
+  `created_date` timestamp NOT NULL DEFAULT now(),
+  `status` varchar(255),
   `rating` int
 );
 
@@ -40,9 +40,9 @@ CREATE TABLE `films` (
   `rating` int,
   `views` int,
   `year` year,
-  `created_date` timestamp DEFAULT (now()),
+  `created_date` timestamp DEFAULT now(),
   `live` boolean,
-  `type` status
+  `type` ENUM('filler','normal','last_episode')
 );
 
 CREATE TABLE `catogeries` (
@@ -80,5 +80,4 @@ ALTER TABLE `user_film` ADD FOREIGN KEY (`filmid`) REFERENCES `films` (`filmid`)
 
 ALTER TABLE `user_film` ADD FOREIGN KEY (`rating`) REFERENCES `user_film` (`filmid`);
 
-ALTER TABLE `users` ADD FOREIGN KEY (`ip`) REFERENCES `users` (`created_date`);
 
