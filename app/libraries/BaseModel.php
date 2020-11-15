@@ -67,10 +67,9 @@ class BaseModel
         $this->columns[$key] = $value;
       } 
 
-      return $row;
-    } else {
-      return false;
-    }
+  
+    } 
+    return $row;
   }
 
 
