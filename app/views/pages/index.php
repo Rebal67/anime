@@ -2,8 +2,8 @@
 <?php $styles=[]; include APPROOT . "/views/fragments/header.php"; ?>
 
 <header class="row"> 
-<h1>Lorem, ipsum dolor.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo earum veniam minus!</p>
+<h1>Welcome to AnimeLover.</h1>
+    <p>Enjoy Your Time</p>
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -12,21 +12,21 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt="...">
+      <img src="/images/remember me.jpg" class="d-block w-100" alt=" width: 273px; height: 330px;"">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt="...">
+      <img src="/images/remember me.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt="...">
+      <img src="/images/remember me.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -44,4 +44,7 @@
 </div>
 </header>
 
+<div class="row footer">
+  <h1>#</h1>
+</div>
 <?php include APPROOT . "/views/fragments/footer.php"; ?>
