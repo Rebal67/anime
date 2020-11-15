@@ -9,7 +9,7 @@ include APPROOT . "/views/fragments/header.php"; ?>
 
 
 
-    <form class="form" validation>
+    <form class="form" enctype="multipart/form-data" method="POST" action="/admin/upload/serie" validation>
       <div class="row">
         <div class="col">
           <div class="form-row">
@@ -21,7 +21,7 @@ include APPROOT . "/views/fragments/header.php"; ?>
 
             <div class="form-group col">
               <label for="">Rating</label>
-              <input type="number" name="rating" max="5" id="" class="form-control" placeholder="rating">
+              <input type="number" name="rating" min="0" max="5" id="" class="form-control" placeholder="rating">
             </div>
 
 
@@ -30,22 +30,22 @@ include APPROOT . "/views/fragments/header.php"; ?>
           <div class="form-row">
             <div class="form-group col">
               <label for="">Serie Status</label>
-              <select class="custom-select" name="" id="">
-                <option selected>Continuing</option>
-                <option value="">Ended</option>
+              <select class="custom-select" name="seriestatus" id="">
+                <option value="continuing" >Continuing</option>
+                <option value="ended" selected>Ended</option>
               </select>
             </div>
 
 
             <div class="form-group col">
               <label for="">Year</label>
-              <input type="number" name="" max="2050" id="" class="form-control" placeholder="rating">
+              <input type="number" name="year" min="1800" max="2050" id="" class="form-control" placeholder="rating">
             </div>
           </div>
           <div>
           <h2>Description</h2>
           <div class="editor">
-            <textarea id="editor"></textarea>
+            <textarea id="editor" name="description"></textarea>
           </div>
         </div>
         </div>
@@ -55,7 +55,7 @@ include APPROOT . "/views/fragments/header.php"; ?>
           <div>
             <label class="btn btn-secondary" type="button" for="name" >
               Upload thumbnail
-            <input type="file" id="name" name="file" onchange="changeThumbnail(event,'thumbnail')" style="display:none">
+            <input type="file" accept="image/*" id="name" name="file" onchange="changeThumbnail(event,'thumbnail')" style="display:none">
             </label>
           </div>
           
@@ -67,7 +67,7 @@ include APPROOT . "/views/fragments/header.php"; ?>
 
       <div>
         <button type="button" name="" id="" class="btn btn-secondary btn-lg ">Cancel </button>
-        <button type="button" name="" id="" class="btn btn-success btn-lg">Save</button>
+        <button type="submit" name="" id="" class="btn btn-success btn-lg">Save</button>
       </div>
 
     </form>

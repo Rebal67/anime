@@ -6,5 +6,8 @@
             "email": "45282854+Rebal67@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "kunstmaan/live-reload-bundle": "^3.5",
+        "php-ffmpeg/php-ffmpeg": "^0.16.0"
+    }
 }
