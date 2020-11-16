@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo URLROOT; ?>">
-    <img src="<?php echo URLROOT; ?>">
+    <img src="<?php echo URLROOT; ?>/images/animestarbucks.jpg">
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -3,7 +3,7 @@
 
 <header class="row"> 
 <h1>Welcome to AnimeLover.</h1>
-    <p>Enjoy Your Time</p>
+    <p></p>
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -12,24 +12,27 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt=" width: 273px; height: 330px;"">
+      <!-- all difault resolution for the carousel images is 750px x 1000px  -->
+      <img src="/images/narutologo.jpg" class="d-block w-100" alt=" width: 273px; height: 330px;"">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h5 id="h5titel">Naruto</h5>
+          <!-- add <p> hier if you want -->
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
+    <!-- all difault resolution for the carousel images is 750px x 1000px  -->
+    <img src="/images/onepiecelogo.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h5 id="h5titel">OnePiece</h5>
+       <!-- add <p> hier if you want -->
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/images/remember me.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <!-- all difault resolution for the carousel images is 750px x 1000px  -->  
+    <img src="/images/rememberme.jpg" class="d-block w-100" alt="width: 273px; height: 330px;"">
+    <div class="carousel-caption d-none d-md-block">
+    <h5 id="h5titel">remember me</h5>
+          <!-- add <p> hier if you want -->
       </div>
     </div>
   </div>
