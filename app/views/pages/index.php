@@ -43,5 +43,4 @@
   </a>
 </div>
 </header>
-
 <?php include APPROOT . "/views/fragments/footer.php"; ?>
