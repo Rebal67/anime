@@ -1,5 +1,6 @@
 :root{
-  --primary: #020873;
+  --primary: #103570;
+  --secondary:  rgba(0, 0, 0, 0.514);
 }
 
 *{
@@ -8,6 +9,7 @@
 
 html,body{
   height: 100%;
+  background-color: whitesmoke;
 }
 
 .navbar{
@@ -46,8 +48,9 @@ header{
 }
 
 .carousel-item img{
-border-radius: 20px;
+border-radius: 5px;
 }
+
 
 #carouselExampleCaptions{
   position: absolute;
@@ -57,7 +60,8 @@ border-radius: 20px;
   width: 60% !important;
   margin: 0 auto;
   transform: translate(-50%,50%);
-  border-radius: 20px;
+  border-radius: 5px;
+  
 }
 
 .carouselExampleCaptions{
@@ -65,10 +69,60 @@ border-radius: 20px;
   margin: auto;
 }
 
+
+
+.carousel-indicators {
+  background-color: var(--secondary);
+  height: 40px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+
+.carousel-control-prev {
+  background-color: var(--secondary);
+  transform: translate(-3%,150%);
+  height: 80px;
+  width: 30px;
+   border-radius: 5px;
+}
+
+.carousel-control-next {
+  background-color: var(--secondary);
+  transform: translate(-3%,150%);
+  height: 80px;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.carousel-inner .h5 {
+background-color: var(--secondary);
+}
+
+.carousel-caption d-none d-md-block {
+  background-color: var(--secondary);
+  color: white;
+  height: 30px;
+}
+
+#h5titel {
+  background-color: var(--secondary);
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .1rem;
+}
+
+
 .footer {
   background-color: var(--primary);
   color: var(--primary);
-  height: 200px;
+  height: 50px;
   position: absolute;
   bottom:0;
   width: 100%;
